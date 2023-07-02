@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Website</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="images/logjpeg.jpeg" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i
+                        class="fas fa-search">Search</i></button>
+            </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Bookings</a>
+                </li>
+            </ul>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link login-register-button join-now-button" href="#">Login/Register</a>
+                <a class="btn btn-primary ml-2 join-now-button" href="#">Join Now</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="profile-section">
+        <img src="images/img.jpg" alt="Profile Icon">
+        <div class="profile-name white">Huraira </div>
+        <button class="btn btn-secondary edit-profile-btn join-now-button">Edit Profile</button>
+
+
+
+        <div class="about-app-section">
+
+            <h3 class="nav-link dropdown-toggle" href="#" id="aboutAppDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                General
+            </h3>
+            <div class="menu" aria-labelledby="aboutAppDropdown">
+                <a class="dropdown-item  d-inline-block white" href="#">Privacy Policy</a>
+                <a class="dropdown-item  d-inline-block white" href="#">Terms and Conditions</a>
+                <a class="dropdown-item  d-inline-block white" href="#">Legal Notices</a>
+                <a class="dropdown-item  d-inline-block white" href="#">About</a>
+                <a class="dropdown-item  d-inline-block white" href="#">Rate Us</a>
+            </div>
+            </li>
+        </div>
+
+        <div class="about-app-section">
+            <h3 class="nav-link dropdown-togle" href="#" id="aboutAppDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                About App
+            </h3>
+            <div class="dropdown-enu" aria-labelledby="aboutAppDropdown">
+                <a class="dropdown-item  white" href="#">Privacy Policy</a>
+                <a class="dropdown-item white" href="#">Terms and Conditions</a>
+                <a class="dropdown-item white" href="#">Legal Notices</a>
+                <a class="dropdown-item white" href="#">About</a>
+                <a class="dropdown-item white" href="#">Rate Us</a>
+            </div>
+            </li>
+            <a class="nav-link btn join-now-button  d-inline-block" href="#">LOGOUT</a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="chat-section " style="margin-top: -530px;">
+        <div class="search-field">
+            <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search Friends"
+                aria-label="Search">
+        </div>
+
+        <div class="chat-friends">
+            <div class="chat-friend">
+                <img src="images/img.jpg" alt="Friend 1">
+                <div class="friend-name white">Ali </div>
+            </div>
+            <div class="chat-friend">
+                <img src="images/img.jpg" alt="Friend 2">
+                <div class="friend-name white">Hasan </div>
+            </div>
+            <div class="chat-friend">
+                <img src="images/img.jpg" alt="Friend 3">
+                <div class="friend-name white">Akram </div>
+            </div>
+            <div class="chat-friend">
+                <img src="images/img.jpg" alt="Friend 3">
+                <div class="friend-name white">Kamran </div>
+            </div>
+            <div class="chat-friend">
+                <img src="images/img.jpg" alt="Friend 3">
+                <div class="friend-name white">Eshan </div>
+            </div>
+        </div>
+
+        <div class="chat-option" style="margin-left: 160px;">
+            <input class="chat-input" type="text" placeholder="Type your message">
+            <button class="chat-send-button">Send</button>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').on('click', function () {
+                $('.dropdown-menu').toggle();
+            });
+        });
+        $(document).ready(function () {
+            $('#search-input').on('keyup', function () {
+                var searchText = $(this).val().toLowerCase();
+                $('.chat-friend').each(function () {
+                    var friendName = $(this).find('.friend-name').text().toLowerCase();
+                    if (friendName.indexOf(searchText) === -1) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            });
+        });
+
+        // $(document).ready(function () {
+        //     $('.dropdown-togle').on('click', function () {
+        //         $('.dropdown-enu').toggle();
+        //     });
+        // });
+    </script>
+</body>
+
+</html>
